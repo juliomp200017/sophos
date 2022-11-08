@@ -34,14 +34,17 @@ namespace sophos_proyect.Controllers
         public async Task<ActionResult<Client>> GetClient(int id)
         {
             var client = await _context.Clients.Include(x => x.Rentals).FirstOrDefaultAsync(y => y.Idclient.Equals(id));
+           
 
+            List<Rental> lista = await _context.Rentals.Where(c => c.Idclient == client.Idclient).ToListAsync();
+           
 
             if (client == null)
             {
                 return NotFound();
             }
+            return StatusCode(StatusCodes.Status200OK, lista);
 
-            return client;
         }
 
 

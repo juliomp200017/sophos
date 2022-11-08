@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pg1YW8XVOrTZZ6g9U5OMZwV18fo7QoHPtd5Mjyqv1HgyVGgjm6GxQooy71AqfXzHDEgLBWa0IFcokwoPRRBt9w==",
+  "dgSpecHash": "M4gfFnTuReoE0kGZjhRs0EYDAy3Yhl3mymz9FipzXtdSkQuUOBB8MEXFprcgdWZlnRwU5/dOXuWcGHIF47qy5Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\julio\\Desktop\\sophos_proyect\\sophos_proyect.csproj",
+  "projectFilePath": "C:\\Users\\julio\\Documents\\sophos\\sophos_proyect\\sophos_proyect.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\julio\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\julio\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

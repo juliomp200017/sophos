@@ -43,28 +43,27 @@ function ClienteID() {
         <table className='table table-bordered'>
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Telefono</th>
-              <th>Email</th>
-              <th>Edad</th>
-              <th>Direccion</th>
-              <th>Cedula</th>
+            <th>ID </th>
+            <th>ID Cliente</th>
+            <th>ID JUEGO</th>
+            <th>Fecha de Alquiler</th>
+            <th>Fecha devolucion</th>
+            <th>price</th>
             </tr>
           </thead>
           <tbody>
-            {
-              <tr key={data.idclient}>
-                <td>{data.idclient}</td>
-                <td>{data.clientname}</td>
-                <td>{data.telephone}</td>
-                <td>{data.email}</td>
-                <td>{data.age}</td>
-                <td>{data.clientaddress}</td>
-                <td>{data.indentificationcard}</td>
-  
-              </tr>
-            }
+          {data.map(item=>(
+            <tr key={item.idrental}>
+              <td>{item.idrental}</td>
+              <td>{item.idclient}</td>
+              <td>{item.idgame}</td>
+              <td>{item.rentaldate}</td>
+              <td>{item.rentaldelivery}</td>
+              <td>{item.price}</td>
+              
+
+            </tr>
+          ))}
   
           </tbody>
         </table>
