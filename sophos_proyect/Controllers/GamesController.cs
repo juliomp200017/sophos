@@ -20,7 +20,12 @@ namespace sophos_proyect.Controllers
         {
             _context = context;
         }
-
+        // GET: api/Games
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Game>>> GetClients()
+        {
+            return await _context.Games.OrderByDescending(x => x.Idgame).ToListAsync();
+        }
 
         // GET: api/Games/Director
         [HttpGet]
@@ -114,10 +119,7 @@ namespace sophos_proyect.Controllers
         // POST: api/Games
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Route("Director")]
-        [Route("Producer")]
-        [Route("Protagonist")]
-        [Route("ReleaseDate")]
+        
         public async Task<ActionResult<Game>> PostGame(Game game)
         {
             _context.Games.Add(game);

@@ -22,6 +22,7 @@ const NavBarExample = () => {
                 </NavDropdown>
 
                 <NavDropdown title="Juegos" id="Juegos">
+                     <NavDropdown.Item as={Link} to ="/Juegos">Todos</NavDropdown.Item>
                      <NavDropdown.Item as={Link} to ="/Productor">Productor</NavDropdown.Item>
                      <NavDropdown.Item as={Link} to ="/Protagonista">Protagonista</NavDropdown.Item>
                      <NavDropdown.Item as={Link} to ="/FechaEstreno">FechaEstreno</NavDropdown.Item>

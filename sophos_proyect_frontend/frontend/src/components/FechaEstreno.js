@@ -2,7 +2,7 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios';
 import { Button } from 'react-bootstrap';
-import {Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Input, Label, Form} from 'reactstrap'
+
 import React, {useState, useEffect} from 'react';
 
 
@@ -11,13 +11,7 @@ import React, {useState, useEffect} from 'react';
 
 function FechaEstreno() {
     const [show, setShow] = useState(false);
-  const [gamename, setgamename] = useState('');
-  const [protagonist, setprotagonist] = useState('');
-  const [director, setdirector] = useState('');
-  const [producer, setproducer] = useState('');
-  const [gameplatform, setgameplatform] = useState('');
-  const [gamerental, setgamerental] = useState('');
-  const [releasedate, setreleasedate] = useState('');
+  
   
   const baseUrl = "https://localhost:7267/api/Games/ReleaseDate"
 
@@ -42,22 +36,7 @@ function FechaEstreno() {
       left:'50%',
       transform: 'translate(-50%,-50%)'*/
   }
-  const createclient = async (e)=>{
-    e.preventDefault()
-   
-       await axios.post(baseUrl, {
-              "gamename": gamename,
-              "protagonist": protagonist,
-              "director": director,
-              "producer": producer,
-              "gameplatform": gameplatform,
-              "releasedate":releasedate,
-              "gamerental": gamerental
-              
-           });
-         handle();
-    
-  }
+  
 
   useEffect(()=>{
     petitionget();
@@ -100,52 +79,7 @@ function FechaEstreno() {
         </tbody>
       </table>
       <button onClick={()=>{handle()}}  className="btn btn-primary">Añadir Juego</button>
-      <Modal isOpen={show} style={modalStyles}>
-        
-
-        <ModalHeader toggle={handle}>
-        REGISTRAR JUEGO
-        </ModalHeader>
-        <ModalBody>
-          <Form className="form" onSubmit={(e) => createclient(e)}>
-            <FormGroup>
-              <Label for="gamename">Nombre</Label>
-              <Input type='text' id='gamename' value={gamename}  
-               maxLength='100' onChange={(e)=>(setgamename(e.target.value))} required>
-              </Input>
-            </FormGroup>
-            <FormGroup>
-             <Label for="protagonist">Protagonista </Label>
-             <Input type="text" id="protagonist" value={protagonist} maxLength="1000" onChange={(e)=>setprotagonist(e.target.value)} required></Input>
-            </FormGroup>
-            <FormGroup>
-            <Label for="director">Director</Label>
-             <Input type='text' id='director' value={director} maxLength="100" onChange={(e)=>setdirector(e.target.value)} required></Input>
-            </FormGroup>
-            <FormGroup>
-            <Label for="producer">Productor</Label>
-             <Input type='text' id='producer' value={producer} maxLength="100" onChange={(e)=>setproducer(e.target.value)} required></Input>
-            </FormGroup>
-            <FormGroup>
-            <Label for="gameplatform">Plataforma</Label>
-             <Input type='text' id='gameplatform' value={gameplatform}  maxLength="1000" onChange={(e)=>setgameplatform(e.target.value)}></Input>
-            </FormGroup>
-            <FormGroup>
-            <Label for="releasedate">Fecha de Lanzamiento</Label>
-             <Input type='date' id='releasedate' value={releasedate}  onChange={(e)=>setreleasedate(e.target.value)}></Input>
-            </FormGroup>
-            <FormGroup>
-            <Label for="gamerental">Precio</Label>
-             <Input type='number' id='gamerental' value={gamerental}  onChange={(e)=>setgamerental(e.target.value)}></Input>
-            </FormGroup>
-            <Button variant="success" type="submit">Registrar</Button>{' '}
-            <Button variant="danger" onClick={handle}>Cerrar</Button>
-          </Form>
-        </ModalBody>
-        <ModalFooter>
-             
-        </ModalFooter>
-     </Modal>
+    
 
 
 
